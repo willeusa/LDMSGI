@@ -25,6 +25,7 @@
                 </xs:element>
             </xs:sequence>
         </xs:complexType>
+        <!--Aunque no hemos visto aún el uso de restricciones únicas, para esto tenemos que ver primero xpath-->
         <xs:unique name="uniqueCodigo">
             <xs:selector xpath="producto" />
             <xs:field xpath="codigo" />

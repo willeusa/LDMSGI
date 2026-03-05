@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="productos.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <!--Voy a utilizar URL's ficticias para las imágenes-->
-<tienda xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="productos.xsd">
+<tienda>
     <producto>
         <codigo>P001</codigo>
         <nombre>Portátil Gaming X1</nombre>

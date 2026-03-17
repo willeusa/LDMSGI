@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="[http://www.w3.org/2001/XMLSchema](http://www.w3.org/2001/XMLSchema)"
+    targetNamespace="[http://www.ies.com/modulo/0373](http://www.ies.com/modulo/0373)"
+    xmlns="[http://www.ies.com/modulo/0373](http://www.ies.com/modulo/0373)"
+    elementFormDefault="qualified">
+
+    <!-- Bloque de Definiciones de Tipos (Reutilizables) -->
+    <!-- Bloque de Declaraciones de Elementos (Estructura de Instancia) -->
+
+</xs:schema>
+
+
+<xs:simpleType name="tipoCodigoModulo">
+    <xs:restriction base="xs:string">
+        <xs:pattern value="[0-9]{4}" />
+    </xs:restriction>
+</xs:simpleType>
+
+
+<xs:complexType name="tipoAula">
+    <xs:sequence>
+        <xs:group ref="tns:infoLocalizacion" />
+        <xs:element name="alumno" type="tns:tipoAlumno" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attributeGroup ref="tns:attrsSeguridad" />
+</xs:complexType>
+
+<xs:complexType name="tipoTasa">
+    <xs:simpleContent>
+        <xs:extension base="xs:decimal">
+            <xs:attribute name="moneda" type="xs:string" fixed="EUR" />
+        </xs:extension>
+    </xs:simpleContent>
+</xs:complexType>

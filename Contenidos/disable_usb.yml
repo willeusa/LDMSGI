@@ -1,0 +1,11 @@
+- name: Bloquear USB
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Blacklist en modprobe
+      copy:
+        dest: /etc/modprobe.d/block_usb.conf
+        content: "blacklist usb-storage\nblacklist uas"
+    - name: Descargar módulos
+      modprobe: { name: "{{ item }}", state: absent }
+      loop: [usb-storage, uas]

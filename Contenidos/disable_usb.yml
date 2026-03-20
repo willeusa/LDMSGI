@@ -7,5 +7,5 @@
         dest: /etc/modprobe.d/block_usb.conf
         content: "blacklist usb-storage\nblacklist uas"
     - name: Descargar módulos
-      modprobe: { name: "{{ item }}", state: absent }
+      modprobe: { name: "{{ item }}", state: present }
       loop: [usb-storage, uas]

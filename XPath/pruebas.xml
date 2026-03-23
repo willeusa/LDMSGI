@@ -5,3 +5,30 @@
         <cpu>Intel Xeon</cpu>
     </servidor>
 </catalogo_cloud>
+
+
+
+
+
+
+
+
+<xs:element name="plataforma_usuarios">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="usuario" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="nombre" type="xs:string"/>
+                        <xs:element name="email" type="xs:string"/> 
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:unique name="unicoEmail">
+        <xs:selector xpath="usuario"/>
+        <xs:field xpath="email"/>
+    </xs:unique>
+</xs:element>

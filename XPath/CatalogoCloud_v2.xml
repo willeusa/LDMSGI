@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="CatalogoCloud_v2.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<catalogo_cloud empresa="TechNova Cloud">
+    
+    <centro_datos ubicacion="Madrid" zona="eu-sur-1">
+        
+        <servidor id="srv-web-01" rack="A1" estado="activo">
+            
+            <hardware>
+                <cpu>Intel Xeon Gold</cpu>
+                <ram>64GB</ram>
+                <gpu>NVIDIA T4</gpu> <discos>
+                    <disco tipo="NVMe" capacidad_tb="2" />
+                </discos>
+            </hardware>
+            
+            <software />
+            
+            <red>
+                <ip_fija>192.168.1.50</ip_fija>
+            </red>
+            
+            <auditoria>
+                <fecha_revision>2026-03-26</fecha_revision>
+                <tecnico>Willman Acosta</tecnico>
+                <nota>Revisión trimestral superada.</nota>
+            </auditoria>
+        </servidor>
+        
+        <servidor id="srv-backup-01" rack="B2" estado="apagado">
+            <hardware>
+                <cpu>Intel Xeon Bronze</cpu>
+                <ram>32GB</ram>
+                <discos>
+                    <disco tipo="HDD" capacidad_tb="50" />
+                </discos>
+            </hardware>
+            
+            <software />
+            
+            <red>
+                <dhcp>si</dhcp>
+            </red>
+            
+            <auditoria>
+                <nota>Equipo en reserva técnica.</nota>
+                <tecnico>Admin Sistema</tecnico>
+                <fecha_revision>2026-03-20</fecha_revision>
+            </auditoria>
+        </servidor>
+        
+    </centro_datos>
+    
+</catalogo_cloud>

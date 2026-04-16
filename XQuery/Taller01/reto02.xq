@@ -1,8 +1,14 @@
-for $nombre_autor in distinct-values(//libro/autor)
-let $libros_del_autor := //libro[autor = $nombre_autor],
-    $total := count($libros_del_autor)
-where $total > 1
+(:
+Reto2. Quiero un informe que nos diga cuántos libros tiene cada autor en nuestra biblioteca.
+Pero atención: solo queremos ver a los autores que tienen más de un libro.
+:)
+(:Utilizaré "na" para el nombre del autor, "sl" para "Sus libros" y "t" para "Total":)
+
+for $na in distinct-values(//libro/autor)
+let $sl := //libro[autor = $na],
+    $t := count($sl)
+where $t > 1
 return
   <resultado>
-    { data($nombre_autor) } - Total: { $total } Libros
+    { data($na) } - Total: { $t } Libros
   </resultado>

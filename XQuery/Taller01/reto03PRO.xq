@@ -9,7 +9,7 @@ let $html_final :=
     </head>
     <body>
       <h1>Listado de Libros Actualizado</h1>
-      <ul>
+      <ol>
       {
         for $l in //libro
         let $titulo := data($l/titulo)
@@ -22,7 +22,7 @@ let $html_final :=
             - { $precio }€
           </li>
       }
-      </ul>
+      </ol>
     </body>
   </html>
 
